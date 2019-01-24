@@ -38,6 +38,21 @@ Router.get('/categories', (req, res, next) => {
   })
 })
 
+//Grabs subcat listing
+Router.get('/listings/:slug', function (req, res, next) {
+  const sql = `
+  SELECT  listing_name, coverphoto, category_id, list.id, cat.name 
+  FROM  listings list
+  LEFT JOIN
+    categories cat ON list.category_id = cat.id
+  WHERE cat.slug = ?
+  `
+
+  conn.query(sql, [req.params.slug], (error, results, fields) => {
+    res.json(results)
+  })
+})
+
 Router.post('/listings', (req, res, next) => {
   const sql = `
   INSERT INTO listings (listing_name, coverphoto, text, city_id, category_id)

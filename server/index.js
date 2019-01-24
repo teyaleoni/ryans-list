@@ -6,7 +6,7 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-app.use('/api', require('./routes/example'))
+app.use('/api', require('./routes/index'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

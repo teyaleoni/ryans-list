@@ -1,0 +1,67 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.postingContainer {
+    border: 1px solid darkslategray;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+
+#maintitle {
+    text-align: center;
+} 
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 3px;
+}
+
+
+#formtitle {
+    margin: 12px;
+    padding: 10px;
+}
+
+#description {
+    margin: 12px;
+    padding: 10px;
+}
+
+
+#select {
+    margin: 12px;
+}
+
+select, input, textarea, button:focus {
+    outline:none;
+}
+
+option {
+    margin: 12px;
+}
+
+#image {
+    margin: 12px;
+    padding: 10px;
+}
+
+#submit {
+    margin: 12px;
+    width: 200px;
+    align-self: center;
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 5px;
+}
+

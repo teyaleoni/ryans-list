@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import store from '../store'
 
 import Home from './Home'
+import Posting from './Posting'
+import Listing from './Listing'
 
 class App extends Component {
   render() {
@@ -12,6 +14,8 @@ class App extends Component {
         <Router>
           <div>
             <Route path="/" exact component={Home} />
+            <Route path="/Posting" component={Posting} />
+            <Route path="/:slug" component={Listing} />
           </div>
         </Router>
       </Provider>

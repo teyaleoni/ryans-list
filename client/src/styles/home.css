@@ -1,3 +1,6 @@
+html {box-sizing:border-box;}
+*,* :after, *:before {box-sizing:inherit;}
+
 .homeContainer{
     max-width: 1000px;
     margin: auto;
@@ -21,7 +24,7 @@
 .sidebar {
     width: 195px;
     height: 400px;
-    background-color: black;
+    border: 1px solid black;
 }
 
 .allContent {
