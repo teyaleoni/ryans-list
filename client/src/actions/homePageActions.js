@@ -29,9 +29,7 @@ export function getCategory(slug) {
 }
 
 function getCat(slug) {
-  console.log(slug);
   axios.get('/listings/' + slug).then(resp => {
-    console.log(resp);
     store.dispatch({
       type: 'GET_CATEGORY', 
       payload: {

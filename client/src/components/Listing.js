@@ -18,8 +18,10 @@ class Listing extends Component {
     render() {
         return(
             <div>
-              {this.props.categoryName
-            }
+              {this.props.match.params.slug}
+              {this.props.currentCategory.listings.map(listing => (
+                  <div key={"listing" + listing.id}>{listing.listingName}</div>
+              ))}
             </div>
         )
     }
@@ -27,8 +29,10 @@ class Listing extends Component {
 
 function mapStateToProps(appState) {
     return {
-      categoryName: appState.homePageReducer.currentCategory.name
+      currentCategory: appState.homePageReducer.currentCategory
     }
   }
+
+  
   
   export default connect(mapStateToProps)(Listing)

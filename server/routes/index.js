@@ -39,16 +39,15 @@ Router.get('/categories', (req, res, next) => {
 })
 
 //Grabs subcat listing
-Router.get('/listings/:slug', function (req, res, next) {
-  const sql = `
-  SELECT  listing_name, coverphoto, category_id, list.id, cat.name 
-  FROM  listings list
-  LEFT JOIN
-    categories cat ON list.category_id = cat.id
-  WHERE cat.slug = ?
-  `
+Router.get('/listings/:slug', (req, res, next) => {
+  const sql = `select l.listing_name, l.text, l.id, c.parent_id as parent_id
+  from listings l
+  left join categories c ON l.category_id = c.id
+  where c.slug = ?`
+  
 
   conn.query(sql, [req.params.slug], (error, results, fields) => {
+    console.log(results)
     res.json(results)
   })
 })
